@@ -4,7 +4,7 @@
 </a>
 
 <p align="center">
- The fastest way to build apps with Next.js and Supabase with Mahdi, Cole, and Noah
+ The fastest way to build apps with Next.js and Supabase with Mahdi, Cole, Noah
 </p>
 
 <p align="center">
