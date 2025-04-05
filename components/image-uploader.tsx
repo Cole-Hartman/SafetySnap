@@ -41,7 +41,7 @@ export default function ImageUploader() {
 			console.log("Error uploading image to bucket", error)
 		}
 		else {
-			console.log("Image uploaded to bucket")
+			console.log("Image uploaded to bucket", data)
 		}
 	}
 
