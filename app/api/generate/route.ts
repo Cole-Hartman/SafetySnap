@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
       ],
     });
 
+    console.log("gemini's response", result.candidates[0].content);
     return NextResponse.json({ result });
   } catch (error) {
     console.error(error);
