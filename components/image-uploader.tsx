@@ -31,8 +31,18 @@ export default function ImageUploader() {
     }
   };
 
-  const handleClick = () => {
-    use;
+  const handleClick = async () => {
+    if (!preview) {
+      return;
+    }
+    const response = fetch("/api/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ imageDataURL: preview }),
+    });
+    console.log(response);
   };
 
   return (
