@@ -1,10 +1,14 @@
 "use client";
-
 import type React from "react";
-
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Upload, X } from "lucide-react";
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+	process.env.NEXT_PUBLIC_SUPABASE_URL,
+	process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
 
 export default function ImageUploader() {
 	const [preview, setPreview] = useState<string | null>(null);
@@ -31,8 +35,21 @@ export default function ImageUploader() {
 		}
 	};
 
+	async function uploadToSupabase(file) {
+		const { data, error } = await supabase.storage.from('images').upload(file.name, file)
+		if (error) {
+			console.log("Error uploading image to bucket", error)
+		}
+		else {
+			console.log("Image uploaded to bucket")
+		}
+	}
+
 	const handleClick = async () => {
-		const response = await fetch("/api/generate", {
+
+		uploadToSupabase(image)
+
+		const response = await fetch("/api/process-image", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -43,7 +60,6 @@ export default function ImageUploader() {
 		const data = await response.json();
 		const geminiText = data.result.candidates[0].content.parts[0].text;
 		setResult(geminiText)
-		// console.log("Response", data.result.candidates[0].content.parts[0].text);
 	};
 
 	return (

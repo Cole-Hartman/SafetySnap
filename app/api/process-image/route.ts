@@ -1,8 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 
-const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_KEY! });
-
+const genAI = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_KEY! });
 const prompt = "What do you see in this image?";
 
 export async function POST(req: NextRequest) {
