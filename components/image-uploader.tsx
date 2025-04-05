@@ -4,13 +4,15 @@ import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Upload, X } from "lucide-react";
 import { createClient } from '@supabase/supabase-js';
+import type { User } from "@supabase/supabase-js";
 
 const supabase = createClient(
 	process.env.NEXT_PUBLIC_SUPABASE_URL,
 	process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-export default function ImageUploader() {
+export default function ImageUploader({ user }: User) {
+
 	const [preview, setPreview] = useState<string | null>(null);
 	const [image, setImage] = useState<File | null>(null);
 	const fileInputRef = useRef<HTMLInputElement>(null);
@@ -36,7 +38,9 @@ export default function ImageUploader() {
 	};
 
 	async function uploadToSupabase(file) {
-		const { data, error } = await supabase.storage.from('images').upload(file.name, file)
+		const filePath = `${user.id}/${file.name}`
+
+		const { data, error } = await supabase.storage.from('images').upload(filePath, file)
 		if (error) {
 			console.log("Error uploading image to bucket", error)
 		}
