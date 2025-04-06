@@ -12,11 +12,12 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
 );
 
-export default function ImageUploader({ user }: User) {
+export default function ImageUploader({ user }: { user: User }) {
   const [preview, setPreview] = useState<string | null>(null);
   const [image, setImage] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [result, setResult] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -40,6 +41,7 @@ export default function ImageUploader({ user }: User) {
 
   const handleClick = async () => {
     if (!image) return;
+    setIsLoading(true);
 
     const ticketID = uuidv4();
 
@@ -72,8 +74,8 @@ export default function ImageUploader({ user }: User) {
     const geminiText = res.result.candidates[0].content.parts[0].text;
 
     const cleanedJson = geminiText
-      .replace(/^```json\s*/, "") // Remove opening ```json and any whitespace
-      .replace(/\s*```$/, ""); // Remove closing ``` and any whitespace before it
+      .replace(/^```json\s*/, "") // Remove opening \`\`\`json and any whitespace
+      .replace(/\s*```$/, ""); // Remove closing \`\`\` and any whitespace before it
 
     console.log("Cleaned text:", cleanedJson);
 
@@ -86,7 +88,7 @@ export default function ImageUploader({ user }: User) {
       }, // insert the whole ticket object into the ticket column
     ]);
 
-    window.location = "/dashboard";
+    window.location.href = "/dashboard";
   };
 
   return (
@@ -130,6 +132,7 @@ export default function ImageUploader({ user }: User) {
             <button
               onClick={clearImage}
               className="absolute top-2 right-2 bg-background rounded-full p-1 shadow-sm hover:bg-accent transition-colors"
+              disabled={isLoading}
             >
               <X className="h-4 w-4" />
             </button>
@@ -143,8 +146,15 @@ export default function ImageUploader({ user }: User) {
       </div>
       {preview && (
         <div className="mt-4">
-          <Button onClick={handleClick} className="w-full">
-            Upload Image
+          <Button onClick={handleClick} className="w-full" disabled={isLoading}>
+            {isLoading ? (
+              <>
+                <div className="mr-2 h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin"></div>
+                Processing...
+              </>
+            ) : (
+              "Upload Image"
+            )}
           </Button>
           <div>{result}</div>
         </div>
