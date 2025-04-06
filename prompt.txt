@@ -374,13 +374,13 @@ When analyzing the construction site image, follow this reasoning process:
 Return your analysis as a JSON object with the following structure:
 
 {
-  "id": "ticket-[unique number]",
+  "id": "[I will provide this value - do not generate]",
   "title": "Brief title describing the main violation",
   "description": "Detailed overview of the safety situation observed in the image",
   "status": "critical", "warning", or "compliant" based on severity,
   "location": "Specific area visible in the image",
   "createdAt": "[current timestamp in ISO format]",
-  "imageUrl": "[reference to the analyzed image]",
+  "imageUrl": "[I will provide this value - do not generate]",
   "violations": [
     {
       "title": "Specific violation title",
