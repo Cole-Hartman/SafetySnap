@@ -11,7 +11,9 @@ export default function Header() {
 		<header className="container mx-auto py-4 px-4 flex justify-between items-center">
 			<div className="flex items-center gap-2">
 				<Shield className="h-8 w-8 text-amber-500" />
-				<span className="font-bold text-2xl text-slate-800">SafetySnap</span>
+				<Link href="/">
+					<span className="font-bold text-2xl text-slate-800">SafetySnap</span>
+				</Link>
 			</div>
 			<nav className="hidden md:flex gap-6">
 				<Link href="#features" className="text-slate-700 hover:text-amber-600 font-medium">

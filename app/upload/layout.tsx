@@ -8,8 +8,6 @@ export default function DashboardLayout({ children }) {
 			<div className="flex flex-col gap-20 max-w-full h-full">
 				{children}
 			</div>
-			<Footer />
 		</div>
 	)
 }
-
