@@ -413,6 +413,7 @@ Important formatting notes:
 
 <RECAP>
 Remember to:
+- If no violations are found (status = "compliant"), the model should provide a clear and well-described explanation of why the image is compliant, referencing specific OSHA safety regulations or visual indicators where possible. At minimum, the description should include the statement: "This image follows all safety regulations and is compliant," followed by a brief justification such as visible PPE usage, proper signage, clear walkways, or correct equipment handling.
 - Identify all workers and analyze their PPE compliance
 - Check for fall protection at heights above 6 feet
 - Verify electrical safety compliance
