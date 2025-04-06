@@ -374,48 +374,41 @@ When analyzing the construction site image, follow this reasoning process:
 Return your analysis as a JSON object with the following structure:
 
 {
-  "report": {
-	"summary": {
-  	"imageDescription": "Brief description of what the image shows",
-  	"workersDetected": "Number of workers detected in image",
-  	"potentialViolations": "Total number of violations detected",
-  	"overallRiskLevel": "CRITICAL, HIGH, MODERATE, or LOW based on most severe violation"
-	},
-	"violations": [
-  	{
-    	"id": "1",
-    	"standard": "29 CFR 1926.XXX(x)(x)",
-    	"title": "Standard title from OSHA regulations",
-    	"location": "Specific location in the image where violation is observed",
-    	"description": "Detailed description of what constitutes the violation",
-    	"severity": "CRITICAL, HIGH, MODERATE, or LOW",
-    	"regulatoryText": "Direct quote from the OSHA standard that is being violated",
-    	"immediateActionRequired": "true or false"
-  	},
-  	{
-    	"id": "2",
-    	"standard": "29 CFR 1926.XXX(x)(x)",
-    	"title": "Standard title from OSHA regulations",
-    	"location": "Specific location in the image where violation is observed",
-    	"description": "Detailed description of what constitutes the violation",
-    	"severity": "CRITICAL, HIGH, MODERATE, or LOW",
-    	"regulatoryText": "Direct quote from the OSHA standard that is being violated",
-    	"immediateActionRequired": "true or false"
-  	}
-	],
-	"recommendations": [
-  	"Specific action item #1 to address violations",
-  	"Specific action item #2 to address violations",
-  	"Specific action item #3 to address violations"
-	],
-	"furtherReview": [
-  	"Potential issue #1 that cannot be definitively determined from image",
-  	"Potential issue #2 that cannot be definitively determined from image"
-	]
-  }
+  "id": "ticket-[unique number]",
+  "title": "Brief title describing the main violation",
+  "description": "Detailed overview of the safety situation observed in the image",
+  "status": "critical", "warning", or "compliant" based on severity,
+  "location": "Specific area visible in the image",
+  "createdAt": "[current timestamp in ISO format]",
+  "imageUrl": "[reference to the analyzed image]",
+  "violations": [
+    {
+      "title": "Specific violation title",
+      "description": "Detailed description of what constitutes the violation",
+      "severity": "high", "medium", or "low",
+      "regulation": "Specific OSHA standard reference (e.g., 'OSHA 29 CFR 1926.501(b)(1)')"
+    },
+    {
+      "title": "Second violation title if applicable",
+      "description": "Detailed description of second violation",
+      "severity": "high", "medium", or "low",
+      "regulation": "Specific OSHA standard reference"
+    }
+  ],
+  "recommendations": [
+    "First specific action to address violations",
+    "Second specific action to address violations",
+    "Additional recommended actions in priority order"
+  ]
 }
 
-Format all text fields as strings and ensure the JSON is well-formed with no syntax errors. The "violations" array should include an entry for each distinct violation detected, with severity levels in order of: CRITICAL (immediate life threat), HIGH (serious injury potential), MODERATE (moderate injury potential), or LOW (minor injury potential). The "recommendations" array should list specific actions in priority order.
+Important formatting notes:
+- Use "high" instead of "CRITICAL", "medium" instead of "MODERATE/HIGH", and "low" instead of "LOW" for severity
+- Status should be "critical" for any high-severity violations, "warning" for medium violations, and "compliant" if no violations
+- If no violations are found, return an empty array for "violations"
+- Keep all recommendations clear, specific, and actionable
+- Format the regulation field as "OSHA 29 CFR [specific standard]"
+- Ensure the JSON is well-formed with no syntax errors
 </OUTPUT_FORMAT>
 
 <RECAP>
