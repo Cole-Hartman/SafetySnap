@@ -2,6 +2,7 @@
 
 > Spot OSHA violations before they become problems with AI-powered analysis for construction workers
 
+<video src="DemoVideo.mp4" width="320" height="240" controls></video>
 
 ## 🚧 The Problem
 
