@@ -2,7 +2,7 @@
 
 > Spot OSHA violations before they become problems with AI-powered analysis for construction workers
 
-<video src="DemoVideo.mp4" width="320" height="240" controls></video>
+[![SafetySnap](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FxlyAivt7FjU)](https://youtu.be/xlyAivt7FjU)
 
 ## 🚧 The Problem
 
@@ -19,7 +19,11 @@ Construction sites are hazardous environments where safety violations can lead t
 
 1. **Snap a Photo** of potential hazards at their worksite  
 2. **Analyze Instantly** using Gemini AI to identify OSHA violations  
-3. **Get Results** with clear feedback and actionable recommendations  
+3. **Get Results** with clear feedback and actionable recommendations
+
+## 🔮 How It Works
+
+![SafetySnap Flow Diagram](https://github.com/user-attachments/assets/2cddf930-e4b9-4d18-b7a6-4618fd0dd1e6)
 
 ## ✨ Key Features
 
@@ -31,18 +35,6 @@ Construction sites are hazardous environments where safety violations can lead t
 | 📈 **Actionable Insights** | Receive practical steps to address safety concerns and maintain compliance |
 | 🛡️ **Preventative Safety Measures** | Identify potential issues before they lead to accidents |
 
-## 🚀 How It Works
-
-1. **Snap a Photo**  
-   Take a picture of an area of concern at your construction site.
-
-2. **AI Analysis**  
-   The image is instantly analyzed using Gemini AI to detect potential OSHA violations.
-
-3. **Get Results**  
-   Receive detailed feedback highlighting any violations, along with recommended actions to improve safety and maintain compliance.
-
-
 ## 🛠️ Technology Stack
 
 - **Frontend**: Next.js, React  
@@ -51,20 +43,6 @@ Construction sites are hazardous environments where safety violations can lead t
 - **Authentication**: Supabase  
 - **Styling**: Tailwind CSS  
 - **Deployment**: Vercel  
-
-
-## 💻 Usage
-
-- Sign up for an account or log in  
-- Upload a photo of a potential safety concern  1
-- Review the AI analysis for OSHA violations  
-- Get recommended actions to address any identified issues  
-- Save and share the results with your team  
-
-## 🔮 Flow Diagram
-
-![SafetySnap Flow Diagram](https://github.com/user-attachments/assets/2cddf930-e4b9-4d18-b7a6-4618fd0dd1e6)
-
 
 ## 👥 The Team
 
