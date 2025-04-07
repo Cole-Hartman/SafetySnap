@@ -1,12 +1,6 @@
-# 🛑 SafetySnap
+# 🛑 SafetySnap: AI-Powered OSHA Violation Detection
 
-<h1 align="center">SafetySnap: AI-Powered OSHA Violation Detection</h1>
-
-<p align="center">
-  Spot OSHA violations before they become problems with AI-powered analysis for construction workers
-</p>
-
-
+> Spot OSHA violations before they become problems with AI-powered analysis for construction workers
 
 
 ## 🚧 The Problem
@@ -35,7 +29,6 @@ Construction sites are hazardous environments where safety violations can lead t
 | 📸 **Photo Documentation** | Maintain a visual record of safety conditions for analysis and improvements |
 | 📈 **Actionable Insights** | Receive practical steps to address safety concerns and maintain compliance |
 | 🛡️ **Preventative Safety Measures** | Identify potential issues before they lead to accidents |
-| 📱 **Works Offline** | Take photos in low or no-network areas and process when back online |
 
 ## 🚀 How It Works
 
@@ -48,11 +41,6 @@ Construction sites are hazardous environments where safety violations can lead t
 3. **Get Results**  
    Receive detailed feedback highlighting any violations, along with recommended actions to improve safety and maintain compliance.
 
-
-
-1. **SNAP PHOTO**: Take pictures of areas of concern at your construction site  
-2. **AI ANALYSIS**: Gemini AI instantly analyzes the image to identify potential OSHA violations  
-3. **GET RESULTS**: Receive detailed feedback with violation details and recommended actions  
 
 ## 🛠️ Technology Stack
 
@@ -67,19 +55,15 @@ Construction sites are hazardous environments where safety violations can lead t
 ## 💻 Usage
 
 - Sign up for an account or log in  
-- Take a photo of a potential safety concern  
-- Upload the image through the app  
+- Upload a photo of a potential safety concern  1
 - Review the AI analysis for OSHA violations  
 - Get recommended actions to address any identified issues  
 - Save and share the results with your team  
 
-## 🔮 Future Enhancements
+## 🔮 Flow Diagram
 
-- Real-time notification system for safety managers  
-- Historical data analysis to identify recurring issues  
-- Mobile app with push notifications  
-- Integration with wearable devices for hands-free operation  
-- Multi-language support for diverse workforces  
+![SafetySnap Flow Diagram](https://github.com/user-attachments/assets/2cddf930-e4b9-4d18-b7a6-4618fd0dd1e6)
+
 
 ## 👥 The Team
 
